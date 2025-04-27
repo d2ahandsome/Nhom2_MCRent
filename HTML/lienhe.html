@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+<!--Nav bar, trang nào cũng phải có-->
+  <header class="navbar">
+    <div class="container">
+      <!-- Logo bên trái -->
+      <div class="logo">
+        <a href="trangchu.html">
+          <img src="./image/logoweb.svg" alt="MC RENT Logo">
+
+        </a>
+      </div>
+
+      <!-- Menu chính -->
+      <nav>
+        <ul class="nav-list">
+          <li><a href="trangchu.html">Trang chủ</a></li>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+          <li><a href="Loginout.html">Đăng nhập</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hotline & button bên phải -->
+      <div class="navbar-right">
+        <div class="hotline">📞 Hotline: 0123 456 789</div>
+        <a href="lienhe.html" class="btn-contact">Liên hệ MC RENT</a>
+      </div>
+    </div>
+  </header>
+  <section class="contact-banner">
+    <div class="banner-content">
+        <h4>Liên hệ</h4>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Gửi mọi thắc mắc của<br>bạn đến với chúng mình !</h1>
+        <p>Bộ phận Chăm sóc khách hàng sẽ giải đáp các thắc mắc nhanh nhất!</p>
+    </div>
+</section>
+
+    <section class="team">
+      <div class="member">
+        <img src="./image/PhanAnh.jpg" alt="MC 2" class="img-hover-zoom">
+        <h2>Lã Phan Anh</h2>
+        <p>Founder</p>
+        <p>SĐT: 0825871304</p>
+        <p>Email: laphananh@gmail.com</p>
+        </div>
+      <div class="member">
+            <img src="./image/AnhDuy.jpg" alt="MC 1" class="img-hover-zoom">
+            <h2>Đặng Anh Duy</h2>
+            <p>Co-Founder</p>
+            <p>SĐT: 0847280305</p>
+            <p>Email: danganhduy@gmail.com</p>
+        </div>
+        <div class="member">
+          <img src="./image/MinhQuan.jpg" alt="MC 2" class="img-hover-zoom">
+          <h2>Cù Minh Quân</h2>
+          <p>Co-Founder</p>
+          <p>SĐT: 0986074160 </p>
+          <p>Email:minhquan9825@gmail.com</p>
+      </div>
+        <div class="member">
+            <img src="./image/DucAnh.jpg" alt="MC 2" class="img-hover-zoom">
+            <h2>Dương Đức Anh</h2>
+            <p>Leader Team MC</p>
+            <p>SĐT: 0868398988</p>
+            <p>Email: duongducanhneu@gmail.com</p>
+        </div>
+
+    </section>
+
+    <section class="contact-info">
+        <div class="info">
+            <h3>Địa chỉ</h3>
+            <p>Đại học Kinh tế Quốc dân, 207 Giải Phóng, Hà Nội</p>
+        </div>
+        <div class="info">
+            <h3>Email</h3>
+            <p>thuemcsukien@gmail.com</p>
+        </div>
+        <div class="info">
+            <h3>Fanpage</h3>
+            <p><a href="https://www.neu.edu.vn/" target="_blank">MC Rent</a></p>
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <h2>Liên hệ</h2>
+        <p>Nội dung form dưới sẽ được chuyển thẳng tới hộp thư của chúng mình nên bạn đừng lo nhé!</p>
+        <div class="form-container">
+            <div class="form-image">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.8138138792524!2d105.83992427363104!3d21.000099188765528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac71752d8f79%3A0xd2ec575c01017afa!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBLaW5oIFThur8gUXXhu5FjIETDom4gKE5FVSk!5e0!3m2!1svi!2s!4v1745604293410!5m2!1svi!2s" 
+              width="600" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+            <form>
+              <label for="name">Họ và tên <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required>
+            
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            
+              <label for="subject">Tiêu đề <span class="required">*</span></label>
+              <input type="text" id="subject" name="subject" required>
+            
+              <label for="message">Nội dung</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+            
+              <button type="submit">Gửi</button>
+            </form>            
+        </div>
+    </section>
+
+
+    <script>
+      const toggles = document.querySelectorAll('.faq-toggle');
+      toggles.forEach(toggle => {
+          toggle.addEventListener('click', () => {
+              const answer = toggle.parentElement.nextElementSibling;
+              answer.classList.toggle('show');
+              toggle.textContent = answer.classList.contains('show') ? '-' : '+';
+          });
+      });
+  </script>
+  
+  <!-- Nút mở chat -->
+  <button class="open-chat-btn" onclick="openChat()">💬 Liên hệ</button>
+  
+  <!-- Cửa sổ chat -->
+  <div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+      <h4>💬 Hỗ trợ khách hàng</h4>
+      <button class="close-btn" onclick="closeChat()">×</button>
+    </div>
+    
+    <div class="chat-body" id="chatBody">
+  
+    </div>
+    
+    <div class="chat-footer">
+      <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." onkeydown="handleKey(event)">
+      <button onclick="sendMessage()">Gửi</button>
+    </div>
+  </div>
+  
+  <script>
+  let hasAutoReply = false;
+  
+  function openChat() {
+    document.getElementById("chatPopup").style.display = "flex";
+  }
+  
+  function closeChat() {
+    document.getElementById("chatPopup").style.display = "none";
+  }
+  
+  function sendMessage() {
+    var input = document.getElementById("chatInput");
+    var message = input.value.trim();
+    if (message !== "") {
+      var chatBody = document.getElementById("chatBody");
+      
+      var userMsg = document.createElement("div");
+      userMsg.className = "message user";
+      userMsg.textContent = message;
+      chatBody.appendChild(userMsg);
+      
+      input.value = "";
+      chatBody.scrollTop = chatBody.scrollHeight;
+  
+      if (!hasAutoReply) {
+        hasAutoReply = true;
+        setTimeout(function() {
+          var botMsg = document.createElement("div");
+          botMsg.className = "message bot";
+          botMsg.textContent = "Chúng tôi đã nhận được câu hỏi của bạn, xin vui lòng đợi phản hồi trong giây lát.";
+          chatBody.appendChild(botMsg);
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 1000); // 1 giây delay
+      }
+    }
+  }
+  
+  function handleKey(e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  }
+  </script>
+  
+  </script>
+  <!--Mở đầu Footer-->
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <a href="trangchu.html" class="footer-logo">
+          <img src="./image/logoweb.svg" alt="MC RENT Logo">
+        </a>
+        <p>MC RENT – Dịch vụ cho thuê MC chuyên nghiệp tại Việt Nam</p>
+    <ul>
+      <li>📞 Điện thoại: 0123 456 789</li>
+      <li>📧 Email: <a href="mailto: thuemcsukien@gmail.com">thuemcsukien@gmail.com</a></li>
+      <li>📍 Địa chỉ: 207 Đ. Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam</li>
+    </ul>
+        
+      </div>
+  
+      <div class="footer-col">
+        <h4>Giới thiệu</h4>
+        <ul>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>MC</h4>
+        <ul>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="booking.html"> Đặt MC</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom container">
+      <p>&copy; 2025 MC RENT. Bản quyền thuộc về MC RENT.</p>
+    </div>
+  </footer>
+  <script src="./trangchu.js"></script>
+
+</body>
+</html>
+
+

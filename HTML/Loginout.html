@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Đăng ký / Đăng nhập MC RENT</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--Nav bar, trang nào cũng phải có-->
+<header class="navbar">
+  <div class="container">
+    <!-- Logo bên trái -->
+    <div class="logo">
+      <a href="trangchu.html">
+        <img src="./image/logoweb.svg" alt="MC RENT Logo">
+      </a>
+    </div>
+
+    <!-- Menu chính -->
+    <nav>
+      <ul class="nav-list">
+        <li><a href="trangchu.html">Trang chủ</a></li>
+        <li><a href="gioithieu.html">Giới thiệu</a></li>
+        <li><a href="profile.html">Hồ sơ MC</a></li>
+        <li><a href="tintuc.html">Tin tức</a></li>
+        <li><a href="lienhe.html">Liên hệ</a></li>
+        <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        <li><a href ="Loginout.html"> Đăng nhập </a></li>
+      </ul>
+    </nav>
+
+    <!-- Hotline & button bên phải -->
+    <div class="navbar-right">
+      <div class="hotline">📞 Hotline: 0123 456 789</div>
+      <a href="lienhe.html" class="btn-contact">Liên hệ MC RENT</a>
+      <a href="Loginout.html">
+      <img src="./image/logo dang nhap.png" style="height: 40px;">
+      </a>
+    </div>
+  </div>
+</header>
+  <div class="register-container">
+    <h2 class="register-title">Đăng nhập vào MC RENT</h2>
+
+    <form id="loginForm" class="login-form">
+      <label for="fullName" class="login-label">Họ và tên</label>
+      <div class="login-input-group">
+        <!-- Icon User -->
+        <svg class="login-icon" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 1.2c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        <input type="text" id="fullName" name="fullName" class="login-input" placeholder="Nhập họ và tên" required>
+      </div>
+
+      <label for="email" class="login-label">Email</label>
+      <div class="login-input-group">
+        <!-- Icon Email -->
+        <svg class="login-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <input type="email" id="email" name="email" class="login-input" placeholder="Nhập địa chỉ email" required>
+      </div>
+
+      <label for="password" class="login-label">Mật khẩu</label>
+      <div class="login-input-group">
+        <!-- Icon Lock -->
+        <svg class="login-icon" viewBox="0 0 24 24"><path d="M12 17a2 2 0 110-4 2 2 0 010 4zm6-6V9a6 6 0 10-12 0v2H4v10h16V11h-2zm-8 0V9a4 4 0 118 0v2H10z"/></svg>
+        <input type="password" id="password" name="password" class="login-input login-password" placeholder="Nhập mật khẩu" required>
+        <!-- Eye Icon -->
+        <svg class="login-icon eye-toggle" viewBox="0 0 24 24" onclick="togglePasswordVisibility()"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"/></svg>
+      </div>
+
+      <button type="submit" class="btn-register">Đăng nhập</button>
+    </form>
+
+    <div class="login-footer">
+      <p class="login-link">Chưa có tài khoản? <a href="signup.html">Đăng ký ngay</a></p>
+      <div class="social-login">
+        <p>Hoặc đăng nhập với</p>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg" alt="Google"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X"></a>
+        </div>
+      </div>
+      <p class="login-terms">Bằng việc tiếp tục, bạn đồng ý với <a href="#">Điều khoản dịch vụ</a></p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = form.fullName.value;
+      const email = form.email.value;
+      alert(`Đăng nhập!\nHọ và tên: ${name}\nEmail: ${email}`);
+    });
+
+    function togglePasswordVisibility() {
+      const pw = document.querySelector('.login-password');
+      pw.type = pw.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+   <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <a href="trangchu.html" class="footer-logo">
+          <img src="./image/logoweb.svg" alt="MC RENT Logo">
+        </a>
+        <p>MC RENT – Dịch vụ cho thuê MC chuyên nghiệp tại Việt Nam</p>
+    <ul>
+      <li>📞 Điện thoại: 0123 456 789</li>
+      <li>📧 Email: <a href="mailto: thuemcsukien@gmail.com">thuemcsukien@gmail.com</a></li>
+      <li>📍 Địa chỉ: 207 Đ. Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam</li>
+    </ul>
+        
+      </div>
+  
+      <div class="footer-col">
+        <h4>Giới thiệu</h4>
+        <ul>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>MC</h4>
+        <ul>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="booking.html"> Đặt MC</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom container">
+      <p>&copy; 2025 MC RENT. Bản quyền thuộc về MC RENT.</p>
+    </div>
+  </footer> 
+</body>
+</html>

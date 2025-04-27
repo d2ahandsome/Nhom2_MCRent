@@ -1,0 +1,172 @@
+.news-page {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #333;
+  }
+  
+  /* 1. Phần đầu */
+  .news-page__top {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Ảnh chính */
+  .news-page__image img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Tiêu đề + slogan */
+  .news-page__heading {
+    flex: 1;
+  }
+  .news-page__title {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .news-page__slogan {
+    font-size: 1.1rem;
+    color: #555;
+    font-style: italic;
+  }
+  
+/* 2. Điểm tin khác */
+.news-page__related {
+    margin-bottom: 2rem;
+  }
+  
+  .news-page__related-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Danh sách điểm tin khác */
+  .news-page__related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;    /* xếp dọc */
+    align-items: flex-start;   /* căn trái */
+    row-gap: 0.5rem;           /* khoảng cách giữa các dòng */
+  }
+  
+  /* Mỗi mục */
+  .news-page__related-list li {
+    width: 100%;               /* cho chiếm hết chiều ngang container */
+  }
+  
+  /* Link trong mục */
+  .news-page__related-list li a {
+    display: block;            /* để cả vùng click được */
+    text-decoration: none;
+    color: #1e88e5;
+    transition: color 0.2s;
+  }
+  
+  .news-page__related-list li a:hover {
+    color: #1565c0;
+  }
+  
+  
+  /* 3. Meta bài viết */
+  .news-page__meta {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    color: #777;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .news-page__top {
+      flex-direction: column;
+    }
+    .news-page__image img {
+      max-width: 100%;
+    }
+    .news-page__meta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  /* Luôn luôn stack ảnh lên trên tiêu đề, căn giữa */
+.news-page__top {
+    display: flex;              
+    flex-direction: column;     /* xếp chồng dọc */
+    align-items: center;        /* căn giữa theo chiều ngang */
+    text-align: center;         /* căn chữ giữa */
+    gap: 1.5rem;                /* khoảng cách giữa image và heading */
+  }
+  
+  /* Giảm độ rộng của heading để không quá full-width */
+  .news-page__heading {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  /* Ảnh luôn nằm chính giữa */
+  .news-page__image img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 8px;
+  }
+  /* chỉ justify phần nội dung, không ảnh hưởng heading hay caption */
+.news-page__body {
+    text-align: left !important;       
+    text-justify: inter-word;   /* triển khai justify theo từ ngữ */
+    line-height: 1.6;           /* tùy chỉnh khoảng cách dòng nếu cần */
+    max-width: 800px;           /* giới hạn chiều rộng để dễ đọc */
+    margin: 0 auto;             /* căn giữa khung nội dung trên trang */
+    padding: 0 1rem;            /* đệm 2 bên cho mobile */
+  }
+  .news-page__heading p {
+    text-align: left !important;
+    line-height: 1.6;      /* tăng khoảng cách dòng cho dễ đọc */
+    margin: 1rem 0;        /* tạo khoảng cách trên/dưới nếu cần */
+  }
+  .news-page__related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .news-page__related-list li {
+    margin-bottom: 1rem;
+  }
+  
+  .news-page__related-list li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1e88e5;
+    transition: color 0.2s;
+  }
+  
+  .news-page__related-list li a:hover {
+    color: #1565c0;
+  }
+  
+  .news-page__related-thumb {
+    flex-shrink: 0;
+    width: 80px;      /* sửa theo kích thước bạn muốn */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 12px;
+  }
+  

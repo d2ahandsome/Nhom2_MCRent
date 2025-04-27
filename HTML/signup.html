@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng ký MC RENT</title>
+  <!-- CSS chung + CSS Đăng ký riêng -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<!--Nav bar, trang nào cũng phải có-->
+<header class="navbar">
+    <div class="container">
+      <!-- Logo bên trái -->
+      <div class="logo">
+        <a href="trangchu.html">
+          <img src="./image/logoweb.png" alt="MC RENT Logo">
+        </a>
+      </div>
+
+      <!-- Menu chính -->
+      <nav>
+        <ul class="nav-list">
+          <li><a href="trangchu.html">Trang chủ</a></li>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hotline & button bên phải -->
+      <div class="navbar-right">
+        <div class="hotline">📞 Hotline: 0123 456 789</div>
+        <a href="lienhe.html" class="btn-contact">Liên hệ MC RENT</a>
+        <a href="Loginout.html">
+        <img src="./image/logo dang nhap.png" style="height: 40px;">
+        </a>
+      </div>
+    </div>
+  </header>
+
+<body>
+  <main class="mr-signup-page">
+    <section class="mr-signup-card">
+      <h1 class="mr-signup-title">Đăng ký thành viên MC RENT</h1>
+      <form id="mr-signup-form" class="mr-signup-form">
+        
+        <!-- Họ và tên -->
+        <div class="mr-field-group mr-fullname-group">
+          <label for="mr-fullname" class="mr-field-label">Họ và tên</label>
+          <div class="mr-field-inner">
+            <svg class="mr-field-icon" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 1.2c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            <input type="text" id="mr-fullname" name="fullname" class="mr-field-input" placeholder="Nhập họ và tên" required>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mr-field-group mr-email-group">
+          <label for="mr-email" class="mr-field-label">Email</label>
+          <div class="mr-field-inner">
+            <svg class="mr-field-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <input type="email" id="mr-email" name="email" class="mr-field-input" placeholder="Nhập địa chỉ email" required>
+          </div>
+        </div>
+
+        <!-- Số điện thoại -->
+        <div class="mr-field-group mr-phone-group">
+          <label for="mr-phone" class="mr-field-label">Số điện thoại</label>
+          <div class="mr-field-inner">
+            <svg class="mr-field-icon" viewBox="0 0 24 24"><path d="M6.6 10.79a15.05 15.05 0 006.6 6.6l2.2-2.2a1 1 0 011.1-.21 11.36 11.36 0 003.6.6 1 1 0 011 1v3.6a1 1 0 01-1 1A17 17 0 015 5a1 1 0 011-1h3.6a1 1 0 011 1 11.36 11.36 0 00.6 3.6 1 1 0 01-.21 1.1l-2.2 2.2z"/></svg>
+            <input type="tel" id="mr-phone" name="phone" class="mr-field-input" placeholder="Nhập số điện thoại" required>
+          </div>
+        </div>
+
+        <!-- Mật khẩu -->
+        <div class="mr-field-group mr-password-group">
+          <label for="mr-password" class="mr-field-label">Mật khẩu</label>
+          <div class="mr-field-inner">
+            <svg class="mr-field-icon" viewBox="0 0 24 24"><path d="M12 17a2 2 0 110-4 2 2 0 010 4zm6-6V9a6 6 0 10-12 0v2H4v10h16V11h-2zm-8 0V9a4 4 0 118 0v2H10z"/></svg>
+            <input type="password" id="mr-password" name="password" class="mr-field-input" placeholder="Nhập mật khẩu" required>
+            <svg class="mr-field-icon mr-eye-toggle" viewBox="0 0 24 24" onclick="mrTogglePassword('mr-password', this)"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"/></svg>
+          </div>
+        </div>
+
+        <!-- Nhập lại mật khẩu -->
+        <div class="mr-field-group mr-confirm-password-group">
+          <label for="mr-confirm-password" class="mr-field-label">Nhập lại mật khẩu</label>
+          <div class="mr-field-inner">
+            <svg class="mr-field-icon" viewBox="0 0 24 24"><path d="M12 17a2 2 0 110-4 2 2 0 010 4zm6-6V9a6 6 0 10-12 0v2H4v10h16V11h-2zm-8 0V9a4 4 0 118 0v2H10z"/></svg>
+            <input type="password" id="mr-confirm-password" name="confirmPassword" class="mr-field-input" placeholder="Nhập lại mật khẩu" required>
+            <svg class="mr-field-icon mr-eye-toggle" viewBox="0 0 24 24" onclick="mrTogglePassword('mr-confirm-password', this)"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"/></svg>
+          </div>
+        </div>
+
+        <!-- Checkbox đồng ý -->
+        <div class="mr-field-group mr-agree-group">
+          <input type="checkbox" id="mr-agree" name="agree" class="mr-field-checkbox" required>
+          <label for="mr-agree" class="mr-field-checkbox-label">
+            Tôi đồng ý với <a href="#" class="mr-link-terms">Điều khoản dịch vụ</a>
+          </label>
+        </div>
+
+        <!-- Nút đăng ký -->
+        <button type="submit" class="mr-btn-submit">Đăng ký</button>
+      </form>
+
+      <!-- Footer nhỏ dành cho signup -->
+      <div class="mr-signup-footer">
+        <p>Bạn đã có tài khoản? <a href="Loginout.html" class="mr-link-login">Đăng nhập ngay</a></p>
+        <p>Hoặc đăng ký nhanh với</p>
+        <div class="mr-social-signup">
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg" alt="Google"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function mrTogglePassword(fieldId, iconEl) {
+      const inp = document.getElementById(fieldId);
+      inp.type = inp.type === 'password' ? 'text' : 'password';
+      iconEl.style.fill = inp.type === 'password' ? '#555' : '#888';
+    }
+    document.getElementById('mr-signup-form').addEventListener('submit', e => {
+      e.preventDefault();
+      // ở đây bạn thêm xử lý AJAX / redirect
+      alert('Đăng ký thành công! Vui lòng kiểm tra email để kích hoạt.');
+    });
+  </script>
+  <!--Mở đầu Footer-->
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <a href="trangchu.html" class="footer-logo">
+          <img src="./image/logoweb.png" alt="MC RENT Logo">
+        </a>
+        <p>MC RENT – Dịch vụ cho thuê MC chuyên nghiệp tại Việt Nam</p>
+    <ul>
+      <li>📞 Điện thoại: 0123 456 789</li>
+      <li>📧 Email: <a href="mailto: thuemcsukien@gmail.com">thuemcsukien@gmail.com</a></li>
+      <li>📍 Địa chỉ: 207 Đ. Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam</li>
+    </ul>
+        
+      </div>
+  
+      <div class="footer-col">
+        <h4>Giới thiệu</h4>
+        <ul>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>MC</h4>
+        <ul>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="profile.html"> Đặt MC</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom container">
+      <p>&copy; 2025 MC RENT. Bản quyền thuộc về MC RENT.</p>
+    </div>
+  </footer>
+</body>
+</html>

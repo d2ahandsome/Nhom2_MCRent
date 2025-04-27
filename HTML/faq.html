@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MC RENT - Navigation</title>
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <!-- Logo bên trái -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="./image/logoweb.svg" alt="MC RENT Logo">
+        </a>
+      </div>
+
+      <!-- Menu chính -->
+      <nav>
+        <ul class="nav-list">
+          <li><a href="trangchu.html">Trang chủ</a></li>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hotline & button bên phải -->
+      <div class="navbar-right">
+        <div class="hotline">📞 Hotline: 0123 456 789</div>
+        <a href="contact.html" class="btn-contact">Liên hệ MC RENT</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="faq-section">
+    <h2 class="faq-title">Câu hỏi thường gặp</h2>
+    <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">
+              Dịch vụ bao gồm những gì?
+            <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          MC cho tiệc cưới, hội nghị, sự kiện doanh nghiệp, lễ khai trương và nhiều hơn nữa.
+        </div>
+    </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                MC có hỗ trợ dẫn chương trình song ngữ không?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Có. Chúng tôi cung cấp các MC chuyên nghiệp dẫn chương trình bằng tiếng Việt và tiếng Anh, hoặc các ngôn ngữ khác theo yêu cầu.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Tôi cần đặt MC trước bao lâu?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Quý khách nên đặt trước ít nhất 2 tuần để đảm bảo lựa chọn được MC phù hợp nhất cho sự kiện của mình.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Chi phí thuê MC bao gồm những gì?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Chi phí thuê MC bao gồm thời gian chuẩn bị, tập dượt và dẫn chương trình tại sự kiện. Các yêu cầu đặc biệt có thể phát sinh phụ phí.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Nếu MC bị ốm hoặc không thể tham gia thì sao?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Chúng tôi luôn có đội ngũ MC dự phòng để đảm bảo sự kiện của quý khách diễn ra suôn sẻ.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const toggles = document.querySelectorAll('.faq-toggle');
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const answer = toggle.parentElement.nextElementSibling;
+            answer.classList.toggle('show');
+            toggle.textContent = answer.classList.contains('show') ? '-' : '+';
+        });
+    });
+</script>
+
+<!-- Nút mở chat -->
+<button class="open-chat-btn" onclick="openChat()">💬 Liên hệ</button>
+
+<!-- Cửa sổ chat -->
+<div class="chat-popup" id="chatPopup">
+  <div class="chat-header">
+    <h4>💬 Hỗ trợ khách hàng</h4>
+    <button class="close-btn" onclick="closeChat()">×</button>
+  </div>
+  
+  <div class="chat-body" id="chatBody">
+
+  </div>
+  
+  <div class="chat-footer">
+    <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." onkeydown="handleKey(event)">
+    <button onclick="sendMessage()">Gửi</button>
+  </div>
+</div>
+
+<script>
+let hasAutoReply = false;
+
+function openChat() {
+  document.getElementById("chatPopup").style.display = "flex";
+}
+
+function closeChat() {
+  document.getElementById("chatPopup").style.display = "none";
+}
+
+function sendMessage() {
+  var input = document.getElementById("chatInput");
+  var message = input.value.trim();
+  if (message !== "") {
+    var chatBody = document.getElementById("chatBody");
+    
+    var userMsg = document.createElement("div");
+    userMsg.className = "message user";
+    userMsg.textContent = message;
+    chatBody.appendChild(userMsg);
+    
+    input.value = "";
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    if (!hasAutoReply) {
+      hasAutoReply = true;
+      setTimeout(function() {
+        var botMsg = document.createElement("div");
+        botMsg.className = "message bot";
+        botMsg.textContent = "Chúng tôi đã nhận được câu hỏi của bạn, xin vui lòng đợi phản hồi trong giây lát.";
+        chatBody.appendChild(botMsg);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 1000); // 1 giây delay
+    }
+  }
+}
+
+function handleKey(e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+}
+</script>
+
+</script>
+
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="./image/logoweb.svg" alt="MC RENT Logo">
+        </a>
+        <p>MC RENT – Dịch vụ cho thuê MC chuyên nghiệp tại Việt Nam</p>
+    <ul>
+      <li>📞 Điện thoại: 0123 456 789</li>
+      <li>📧 Email: <a href="mailto: thuemcsukien@gmail.com">thuemcsukien@gmail.com</a></li>
+      <li>📍 Địa chỉ: 207 Đ. Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam</li>
+    </ul>
+        
+      </div>
+  
+      <div class="footer-col">
+        <h4>Giới thiệu</h4>
+        <ul>
+          <li><a href="about.html">Về chúng tôi</a></li>
+          <li><a href="news.html">Tin tức</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>MC</h4>
+        <ul>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="booking.html"> Đặt MC</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="careers.html">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom container">
+      <p>&copy; 2025 MC RENT. Bản quyền thuộc về MC RENT.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

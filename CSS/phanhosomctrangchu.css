@@ -1,0 +1,122 @@
+/* Profile Section */
+.profile-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-header h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile-header p {
+    font-size: 18px;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.profile-grid {
+    display: contents; /* Allows the grid to apply directly to the cards */
+}
+
+/* Card */
+.profile-card {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Ảnh */
+.profile-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Badge điểm đánh giá */
+.profile-card .rating-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ffc107;
+    color: #222;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Nội dung bên dưới ảnh */
+.profile-content {
+    padding: 16px;
+}
+
+.profile-content h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+    color: #a11d1d;
+}
+
+.profile-content p {
+    margin: 0 0 12px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.profile-content .price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* Nút “Đặt ngay” */
+.profile-content .btn {
+    display: inline-block;
+    background: #00c4cc; /* Cyan color from the image */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.profile-content .btn:hover {
+    background: #00a3a9; /* Darker cyan on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .profile-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Remove conflicting About Section styles */
+.about {
+    display: none; /* Hide the old about section styles */
+}

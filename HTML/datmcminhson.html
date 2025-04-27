@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Minh Sơn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--Nav bar, trang nào cũng phải có-->
+<header class="navbar">
+    <div class="container">
+      <!-- Logo bên trái -->
+      <div class="logo">
+        <a href="trangchu.html">
+          <img src="./image/logoweb.svg" alt="MC RENT Logo">
+        </a>
+      </div>
+
+      <!-- Menu chính -->
+      <nav>
+        <ul class="nav-list">
+          <li><a href="trangchu.html">Trang chủ</a></li>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hotline & button bên phải -->
+      <div class="navbar-right">
+        <div class="hotline">📞 Hotline: 0123 456 789</div>
+        <a href="lienhe.html" class="btn-contact">Liên hệ MC RENT</a>
+        <a href="Loginout.html">
+        <img src="./image/logo dang nhap.png" style="height: 40px;">
+        </a>
+      </div>
+    </div>
+  </header>
+<!--Kết thúc header-->
+    <style>
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+    
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+    
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .cart-item:hover {
+            transform: translateY(-2px);
+        }
+        .cart-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .cart-item-info {
+            flex: 1;
+        }
+        .cart-item-info h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+        .cart-item-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        button.cancel-btn {
+            background-color: #dc3545;
+        }
+        button.cancel-btn:hover {
+            background-color: #c82333;
+        }
+        button.booked-btn {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        #confirmation-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 4px;
+            z-index: 1001;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeOut 3s forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+        @media (max-width: 600px) {
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .cart-item img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+            .cart-item-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            #confirmation-message {
+                max-width: 90%;
+                padding: 10px 20px;
+            }
+            /* override container chỉ cho file này */
+  .container {
+    max-width: 1400px;
+    width: 90%;
+  }
+        }
+    </style>
+</head>
+<body style=" font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;">
+    <div class="container">
+        <div id="cart" class="section">
+            <h2>Đặt MC</h2>
+            <div id="cart-items">
+                <!-- Danh sách MC sẽ được thêm bằng JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for MC Details -->
+    <div id="mc-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-price"></p>
+            <p id="modal-date"></p>
+            <button onclick="confirmBooking()">Đặt MC</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Message -->
+    <div id="confirmation-message"></div>
+
+    <script>
+        // Mock data cho giỏ đặt MC
+        let cart = [
+            {
+                id: 5,
+                name: 'MC Minh Sơn',
+                price: 7000000,
+                eventDate: '2025-05-30',
+                image: 'image/Image5.png'
+            },
+        ];
+        let selectedMCId = null;
+        // Object to track booked MCs
+        const bookedMCs = {};
+
+        // Hàm hiển thị giỏ đặt MC
+        function renderCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Giỏ đặt MC trống!</p>';
+                return;
+            }
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                const isBooked = bookedMCs[item.id] || false;
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <h3>${item.name}</h3>
+                        <p>Giá: ${item.price.toLocaleString()} VNĐ</p>
+                        <p>Ngày sự kiện: <input type="date" value="${item.eventDate}" onchange="updateDate(${item.id}, this.value)"></p>
+                    </div>
+                    <div class="cart-item-actions">
+                        ${isBooked ? `
+                            <button class="booked-btn" disabled>Đã đặt</button>
+                            <button class="cancel-btn" onclick="cancelBooking(${item.id}, '${item.name}')">Hủy đặt</button>
+                        ` : `
+                            <button onclick="showDetails(${item.id})">Xem chi tiết</button>
+                        `}
+                    </div>
+                `;
+                cartItems.appendChild(itemDiv);
+            });
+        }
+
+        // Hàm cập nhật ngày sự kiện
+        function updateDate(id, date) {
+            cart = cart.map(item => item.id === id ? { ...item, eventDate: date } : item);
+            renderCart();
+        }
+
+        // Hàm hiển thị chi tiết MC
+        function showDetails(id) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                selectedMCId = id;
+                document.getElementById('modal-title').textContent = item.name;
+                document.getElementById('modal-price').textContent = `Giá: ${item.price.toLocaleString()} VNĐ`;
+                document.getElementById('modal-date').textContent = `Ngày sự kiện: ${item.eventDate}`;
+                document.getElementById('mc-modal').style.display = 'flex';
+            }
+        }
+
+        // Hàm xác nhận đặt MC
+        function confirmBooking() {
+            if (selectedMCId !== null) {
+                const item = cart.find(item => item.id === selectedMCId);
+                // Mark the MC as booked
+                bookedMCs[selectedMCId] = true;
+                const message = `Đặt MC thành công! Chúng tôi sẽ nhắn tin xác nhận thông tin trong thời gian sớm nhất.`;
+                // Hiển thị thông báo trên trang
+                const confirmationMessage = document.getElementById('confirmation-message');
+                confirmationMessage.textContent = message;
+                confirmationMessage.style.display = 'block';
+                // Giữ alert để phù hợp với hành vi trước đó
+                alert(message);
+                selectedMCId = null;
+                closeModal();
+                renderCart();
+                // Đặt lại display sau khi animation kết thúc
+                setTimeout(() => {
+                    confirmationMessage.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // Hàm hủy đặt MC (không xóa khỏi giỏ hàng, chỉ thay đổi trạng thái)
+        function cancelBooking(id, name) {
+            delete bookedMCs[id];
+            const message = `Hủy đặt MC ${name} thành công!`;
+            const confirmationMessage = document.getElementById('confirmation-message');
+            confirmationMessage.textContent = message;
+            confirmationMessage.style.display = 'block';
+            alert(message);
+            renderCart();
+            setTimeout(() => {
+                confirmationMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        // Hàm đóng modal
+        function closeModal() {
+            document.getElementById('mc-modal').style.display = 'none';
+            selectedMCId = null;
+        }
+
+        // Đóng modal khi nhấp ra ngoài
+        window.onclick = function(event) {
+            const modal = document.getElementById('mc-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Khởi tạo giỏ đặt MC khi tải trang
+        renderCart();
+    </script>
+<!--Mở đầu Footer-->
+<footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <a href="trangchu.html" class="footer-logo">
+          <img src="./image/logoweb.svg" alt="MC RENT Logo">
+        </a>
+        <p>MC RENT – Dịch vụ cho thuê MC chuyên nghiệp tại Việt Nam</p>
+    <ul>
+      <li>📞 Điện thoại: 0123 456 789</li>
+      <li>📧 Email: <a href="mailto: thuemcsukien@gmail.com">thuemcsukien@gmail.com</a></li>
+      <li>📍 Địa chỉ: 207 Đ. Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam</li>
+    </ul>
+        
+      </div>
+  
+      <div class="footer-col">
+        <h4>Giới thiệu</h4>
+        <ul>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>MC</h4>
+        <ul>
+          <li><a href="profile.html">Hồ sơ MC</a></li>
+          <li><a href="booking.html"> Đặt MC</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="tuyendung.html">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom container">
+      <p>&copy; 2025 MC RENT. Bản quyền thuộc về MC RENT.</p>
+    </div>
+  </footer>
+    
+</body>
+</html>
